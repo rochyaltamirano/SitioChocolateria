@@ -44,4 +44,17 @@ html {
 
 #enviado{
      color:green;
+     font-family: 'Amatic SC', cursive;
+}
+
+.error
+{
+    color:red;
+    text-align: right;
+    font-family: 'Amatic SC', cursive;
+}
+
+.fuente {
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
 }
