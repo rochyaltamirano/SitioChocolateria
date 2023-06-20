@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 20-06-2023 a las 02:49:06
+-- Tiempo de generación: 20-06-2023 a las 20:53:33
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -62,7 +62,8 @@ INSERT INTO `novedades` (`id`, `titulo`, `novedad`) VALUES
 (1, '¡Estamos contratando!', 'Si te interesa trabajar con nosotrosm acercanos tu CV a nuestra sucursal.'),
 (2, '¡Nuevo sabor!', '¿Ya probaste nuestro nuevo sabor chocolate triple A? Tiene una mezcla de chocolate, nueces y un ingrediente secreto.'),
 (3, '¡Nueva sucursal!', 'Pronto abriremos una nueva sucursal en el Tortugas Open Mall.'),
-(6, 'lal', 'lalala');
+(6, 'lal', 'lalala'),
+(7, 'nove', 'dad');
 
 -- --------------------------------------------------------
 
@@ -74,17 +75,18 @@ CREATE TABLE `promociones` (
   `id` int(11) NOT NULL,
   `titulo` varchar(100) NOT NULL,
   `descripcion` varchar(250) NOT NULL,
-  `precio` int(50) NOT NULL
+  `precio` int(50) NOT NULL,
+  `img_id` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `promociones`
 --
 
-INSERT INTO `promociones` (`id`, `titulo`, `descripcion`, `precio`) VALUES
-(1, 'Promo 1', 'Caja de 8 bombones a elección', 850),
-(3, 'Promo 2', 'Cajas personalizadas', 1500),
-(4, 'Promo 3', 'Caja corazón con 13 bombones', 1600);
+INSERT INTO `promociones` (`id`, `titulo`, `descripcion`, `precio`, `img_id`) VALUES
+(1, 'Promo 1', 'Caja de 8 bombones a elección', 850, 'afva13bipvpkpptbcv1b'),
+(3, 'Promo 2', 'Cajas personalizadas', 1500, NULL),
+(4, 'Promo 3', 'Caja corazón con 13 bombones', 1600, NULL);
 
 -- --------------------------------------------------------
 
@@ -147,13 +149,13 @@ ALTER TABLE `faqs`
 -- AUTO_INCREMENT de la tabla `novedades`
 --
 ALTER TABLE `novedades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `promociones`
 --
 ALTER TABLE `promociones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
