@@ -1,9 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var faqsModel = require ('../models/faqsModel');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('faqs'); //faqs.hbs
+/* GET FAQs page. */
+router.get('/', async function (req, res, next) {
+  var faqs = await faqsModel.getFaqs();
+  res.render('faqs', {
+   faqs
+   });
 });
 
 module.exports = router;

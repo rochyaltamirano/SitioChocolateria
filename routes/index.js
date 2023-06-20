@@ -1,11 +1,22 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
+var novedadesModel = require ('../models/novedadesModel');
+var promocionesModel = require('../models/promocionesModels');
+var faqsModel = require ('../models/faqsModel');
+
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', async function (req, res, next) {
+
+  var novedades = await novedadesModel.getNovedades();
+  var promociones = await promocionesModel.getPromociones();
+  var faqs = await faqsModel.getFaqs();
+  res.render('index', {
+    novedades, promociones, faqs
+   });
 });
+
 
 router.post('/', async (req, res, next) => {
 

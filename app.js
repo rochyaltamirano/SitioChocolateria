@@ -11,6 +11,9 @@ var indexRouter = require('./routes/index');
 var faqsRouter = require('./routes/faqs'); //faqs.js
 var loginRouter = require('./routes/admin/login');
 var adminHomeRouter = require('./routes/admin/homeAdmin');
+var adminNovedadesRouter = require ('./routes/admin/novedades');
+var adminFaqsRouter = require ('./routes/admin/faqs');
+var adminPromocionesRouter = require ('./routes/admin/promociones');
 
 var app = express();
 
@@ -36,7 +39,7 @@ secured = async (req, res, next) => {
     if (req.session.id_usuario){
       next();
     } else {
-      res.rendirecr('/admin/login');
+      res.redirect('/admin/login');
     }
   } catch (error) {
     console.log(error);
@@ -47,6 +50,9 @@ app.use('/', indexRouter);
 app.use('/faqs', faqsRouter);
 app.use('/admin/login', loginRouter);
 app.use('/admin/home', secured, adminHomeRouter);
+app.use('/admin/novedades', secured, adminNovedadesRouter);
+app.use('/admin/faqs', secured, adminFaqsRouter);
+app.use ('/admin/promociones', secured, adminPromocionesRouter);
 
 app.get('/faqs', function (req, res){
   res.redirect('faqs')

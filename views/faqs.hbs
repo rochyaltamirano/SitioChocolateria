@@ -36,25 +36,14 @@
     </nav>
 
     <!--Sección preguntas y respues-->
-    <div class="container-fluid ">
-        <div class="row">
-            <h2>1. ¿Realizan envíos a domicilio?</h2>
-            <p>Por el momento no, solo retiro por nuestro local.</p>
-
-            <h2>2. ¿Qué formas de pago puedo aprovechar para realizar mi compra?</h2>
-            <p>Aceptamos efectivo, transferencias, todas las tarjetas de crédito, débito y MercadoPago.</p>
-            
-            <h2>3. ¿Hay descuento si compro en efectivo?</h2>
-            <p>Si, tenemos un 10% de descuento si pagas en efectivo.</p>
-
-            <h2>4. ¿Importan productos?</h2>
-            <p>No, son todos de producción propia.</p>
-
-            <h2>5. ¿Realizan chocolates personalizados?</h2>
-            <p>Si, claro. Acercanos tu idea y lo diseñamos juntos.</p>
-
-            <h2>6. ¿Tienen productos sin TACC?</h2>
-            <p>Si, tenemos variedad de productos sin TACC.</p>
+    <div class="container-fluid" style="margin:100px auto">
+        <div id="faqs">
+            {{#each faqs}}
+            <div class="row">
+                <h2>{{id}}. {{pregunta}}</h2>
+                <p>{{respuesta}}</p>
+            </div>
+            {{/each}}
         </div>
     </div>
 

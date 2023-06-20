@@ -1,0 +1,23 @@
+<div class="container" style="margin:100px auto">
+    <div class="row">
+        <div class="col-6 offset-3" style="margin:20px auto">
+            <h2 class="text-center">Agregar una nueva FAQs</h2>
+            <form action="/admin/faqs/agregarfaq" method="post">
+                <div class="form-group" style="margin:10px auto">
+                    <label for="">Pregunta:</label>
+                    <textarea type="text" class="form-control" placeholder="Pregunta" name="pregunta"></textarea>
+                </div>
+                <div class="form-group" style="margin:10px auto">
+                    <label for="">Respuesta:</label>
+                    <textarea type="text" class="form-control" placeholder="Respuesta" name="respuesta"></textarea>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin:10px auto">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+            {{#if error}}
+            <p class="error">{{message}}</p>
+            {{/if}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container" style="margin:100px auto">
+    <div class="row">
+        <div class="col-6 offset-3" style="margin:20px auto">
+            <h2 class="text-center">Agregar una nueva novedad</h2>
+            <form action="/admin/novedades/agregarnovedad" method="post">
+                <div class="form-group" style="margin:10px auto">
+                    <label for="">Título:</label>
+                    <input type="text" class="form-control" placeholder="Título" name="titulo">
+                </div>
+                <div class="form-group" style="margin:10px auto">
+                    <label for="">Novedad:</label>
+                    <textarea type="text" class="form-control" placeholder="Novedad" name="novedad"></textarea>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin:10px auto">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+            {{#if error}}
+            <p class="error">{{message}}</p>
+            {{/if}}
+        </div>
+    </div>
+</div>
