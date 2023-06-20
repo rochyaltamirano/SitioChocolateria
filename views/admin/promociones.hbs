@@ -33,6 +33,7 @@
                     <tr class="table-danger">
                         <th scope="col">#</th>
                         <th scope="col">Título</th>
+                        <th scope="col">Imagen</th>
                         <th scope="col" class="text-right">Acciones</th>
                     </tr>
                 </thead>
@@ -41,9 +42,12 @@
                     <tr>
                         <th scope="row">{{id}}</th>
                         <td>{{titulo}}</td>
-                        <td class="text-right"> 
-                            <a href="/admin/promociones/modificarpromocion/{{id}}" class="btn btn-secondary"><i class="fas fa-pencil-alt"></i></a>
-                            <a href="/admin/promociones/eliminar/{{id}}" class="btn btn-secondary"><i class="fas fa-trash"></i></a>
+                        <td>{{{imagen}}}</td>
+                        <td class="text-right">
+                            <a href="/admin/promociones/modificarpromocion/{{id}}" class="btn btn-secondary"><i
+                                    class="fas fa-pencil-alt"></i></a>
+                            <a href="/admin/promociones/eliminar/{{id}}" class="btn btn-secondary"><i
+                                    class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                     {{/each}}

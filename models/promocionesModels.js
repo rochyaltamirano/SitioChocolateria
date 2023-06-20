@@ -14,10 +14,10 @@ async function deletePromocionById(id){
     return rows;
 }
 
-/*Agregar novedad*/
+/*Agregar promo*/
 async function insertPromocion (obj) {
     try {
-        var query = "insert into promociones set ?";
+        var query = 'insert into promociones set ?';
         var rows = await pool.query (query, [obj]);
         return rows;
     }

@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-6 offset-3" style="margin:20px auto">
             <h2 class="text-center">Agregar una nueva promoción</h2>
-            <form action="/admin/promociones/agregarpromocion" method="post">
+            <form action="/admin/promociones/agregarpromocion" method="post" enctype="multipart/form-data">
                 <div class="form-group" style="margin:10px auto">
                     <label for="">Título:</label>
                     <input type="text" class="form-control" placeholder="Título" name="titulo">
@@ -11,10 +11,17 @@
                     <label for="">Descripción:</label>
                     <textarea type="text" class="form-control" placeholder="Descripción" name="descripcion"></textarea>
                 </div>
+
                 <div class="form-group" style="margin:10px auto">
                     <label for="">Precio:</label>
-                    <input type="text" class="form-control" placeholder="Precio" name="precio">
+                    <input type="text" class="form-control" placeholder="Ingrese un número entero" name="precio">
                 </div>
+
+                <div class="form-group" style="margin:10px auto">
+                    <label>Imagen: <input type="file" class="form-control" name="imagen" id="imagen" /></label>
+                    <label style="color: red;">La imagen debe ser de 259x194</label>
+                </div>
+
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin:10px auto">
                     <button type="submit" class="btn btn-primary">Guardar</button>
                 </div>

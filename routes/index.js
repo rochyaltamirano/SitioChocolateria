@@ -5,6 +5,8 @@ var novedadesModel = require ('../models/novedadesModel');
 var promocionesModel = require('../models/promocionesModels');
 var faqsModel = require ('../models/faqsModel');
 
+var cloudinary= require ('cloudinary').v2;
+
 
 /* GET home page. */
 router.get('/', async function (req, res, next) {
@@ -12,6 +14,26 @@ router.get('/', async function (req, res, next) {
   var novedades = await novedadesModel.getNovedades();
   var promociones = await promocionesModel.getPromociones();
   var faqs = await faqsModel.getFaqs();
+
+  promociones = promociones.map (promocion => {
+    if (promocion.img_id){
+        const imagen = cloudinary.url(promocion.img_id, {
+          width: 259,
+          height: 194,
+            crop: 'fill'
+        });
+        return {
+            ...promocion,
+            imagen
+        }
+    } else {
+        return {
+            ...promocion,
+            imagen: '/images/noimage.jpg'
+        }
+    }
+})
+  
   res.render('index', {
     novedades, promociones, faqs
    });
