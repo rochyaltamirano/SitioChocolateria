@@ -17,7 +17,7 @@ router.get('/', async function(req, res, next){
 });
 
 /*para eliminar una promo*/
-router.get ('/eliminarpromo/:id', async (req, res, next) => {
+router.get ('/eliminar/:id', async (req, res, next) => {
     const id = req.params.id;
     await promocionesModel.deletePromocionById (id);
     res.redirect('/admin/promociones');
