@@ -18,8 +18,17 @@
         <div class="col-7" style="margin-top:-9px ;">
             <h2>Listado de Preguntas Frecuentes</h2>
         </div>
-        <div class="col-5 d-grid gap-2 d-md-flex justify-content-md-end" style="margin:10px auto">
+        <div class="col-2 d-grid gap-2 d-md-flex justify-content-md-end" style="margin:10px auto">
             <a href="/admin/faqs/agregarfaq" class="btn btn-success"><i class="fas fa-plus"></i>Nuevo</a>
+        </div>
+
+         <div class="col-3 d-grid gap-2 d-md-flex justify-content-md-end">
+            <form class="d-flex" action="/admin/faqs" method="get">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="q" 
+                {{#if q}} value="{{q}}" {{/if}}>
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa fa-search"
+                        aria-hidden="true"></i></button>
+            </form>
         </div>
 
     </div>
@@ -28,7 +37,7 @@
     {{!-- Inicio fila 3--}}
     <div class="row">
         <div class="col">
-            <table class="table">
+            <table class="table" style="margin: 10px auto;">
                 <thead>
                     <tr class="table-danger">
                         <th scope="col">#</th>
@@ -51,6 +60,11 @@
                     {{/each}}
                 </tbody>
             </table>
+            {{#if is_search}}
+            {{#unless faqs.length}}
+                <p class="text-center">No se encontraron resultados para "<b>{{q}}</b>"</p>
+            {{/unless}}
+            {{/if}}
         </div>
     </div>
     {{!-- Fin fila 3--}}

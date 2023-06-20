@@ -42,4 +42,10 @@ async function modificarFaqById (obj, id) {
     }
 }
 
-module.exports = { getFaqs, deleteFaqById, insertFaq, getFaqsById, modificarFaqById }
+async function buscarFaqs(busqueda) {
+    var query = "select * from faqs where pregunta like ? OR respuesta like ?";
+    var rows = await pool.query(query, ['%' + busqueda + '%', '%' + busqueda + '%']);
+    return rows;
+}
+
+module.exports = { getFaqs, deleteFaqById, insertFaq, getFaqsById, modificarFaqById, buscarFaqs }

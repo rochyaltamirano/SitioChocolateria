@@ -5,12 +5,20 @@ var faqsModel = require('../../models/faqsModel');
 /*GET FAQs page*/
 router.get('/', async function (req, res, next) {
 
-    var faqs = await faqsModel.getFaqs();
+    var faqs
+    
+    if (req.query.q === undefined) {
+        faqs = await faqsModel.getFaqs();
+    } else {
+        faqs = await faqsModel.buscarFaqs(req.query.q);
+    }
 
     res.render('admin/faqs', {
         layout: 'admin/layout',
         persona: req.session.nombre,
-        faqs
+        faqs,
+        is_search: req.query.q !== undefined,
+        q: req.query.q
     });
 });
 
