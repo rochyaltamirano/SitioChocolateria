@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 20-06-2023 a las 20:53:33
+-- Tiempo de generación: 23-06-2023 a las 20:10:35
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -40,7 +40,9 @@ CREATE TABLE `faqs` (
 INSERT INTO `faqs` (`id`, `pregunta`, `respuesta`) VALUES
 (1, '¿Realizan envíos a domicilio?', 'Por el momento no, solo retiro por nuestro local.'),
 (2, '¿Cómo puedo abonar?', 'Aceptamos efectivo, transferencias, todas las tarjetas de crédito, débito y MercadoPago.'),
-(3, '¿Hay descuento si compro en efectivo?', 'Si, tenemos un 10% de descuento si pagas en efectivo.');
+(3, '¿Hay descuento si compro en efectivo?', 'Si, tenemos un 10% de descuento si pagas en efectivo.'),
+(4, '¿Realizan chocolates personalizados?\r\n', 'Si, claro. Acercanos tu idea y lo diseñamos juntos.'),
+(5, '¿Tienen productos sin TACC?', 'Si, tenemos.');
 
 -- --------------------------------------------------------
 
@@ -60,10 +62,8 @@ CREATE TABLE `novedades` (
 
 INSERT INTO `novedades` (`id`, `titulo`, `novedad`) VALUES
 (1, '¡Estamos contratando!', 'Si te interesa trabajar con nosotrosm acercanos tu CV a nuestra sucursal.'),
-(2, '¡Nuevo sabor!', '¿Ya probaste nuestro nuevo sabor chocolate triple A? Tiene una mezcla de chocolate, nueces y un ingrediente secreto.'),
 (3, '¡Nueva sucursal!', 'Pronto abriremos una nueva sucursal en el Tortugas Open Mall.'),
-(6, 'lal', 'lalala'),
-(7, 'nove', 'dad');
+(8, 'Novedad de prueba 1234', 'esta es una novedad de prueba 1234');
 
 -- --------------------------------------------------------
 
@@ -84,9 +84,8 @@ CREATE TABLE `promociones` (
 --
 
 INSERT INTO `promociones` (`id`, `titulo`, `descripcion`, `precio`, `img_id`) VALUES
-(1, 'Promo 1', 'Caja de 8 bombones a elección', 850, 'afva13bipvpkpptbcv1b'),
-(3, 'Promo 2', 'Cajas personalizadas', 1500, NULL),
-(4, 'Promo 3', 'Caja corazón con 13 bombones', 1600, NULL);
+(1, 'Promo personalizados', 'Caja de bombones personalizados', 850, NULL),
+(9, 'Promo Test', 'promo de prueba', 2500, 'w6ce7zj30r6a22gueg3i');
 
 -- --------------------------------------------------------
 
@@ -143,19 +142,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `faqs`
 --
 ALTER TABLE `faqs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `novedades`
 --
 ALTER TABLE `novedades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `promociones`
 --
 ALTER TABLE `promociones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
