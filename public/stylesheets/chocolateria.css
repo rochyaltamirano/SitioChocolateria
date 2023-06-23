@@ -20,6 +20,9 @@ h2 {
     font-size: 30px;
 }
 
+h5 {
+    font-size: 25px;
+}
 
 .staff {
     background: #efefef;
@@ -58,4 +61,10 @@ html {
 .fuente {
     font-family: 'Amatic SC', cursive;
     font-size: 20px;
+}
+
+.valores {
+    font-size: 30px;
+    color: blue;
+    align-items: center;
 }

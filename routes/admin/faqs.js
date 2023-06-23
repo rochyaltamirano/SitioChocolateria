@@ -22,6 +22,7 @@ router.get('/', async function (req, res, next) {
     });
 });
 
+
 /*Eliminar una faq*/
 router.get('/eliminar/:id', async (req, res, next) => {
     const id = req.params.id;

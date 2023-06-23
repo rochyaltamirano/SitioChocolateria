@@ -48,4 +48,10 @@ async function buscarFaqs(busqueda) {
     return rows;
 }
 
-module.exports = { getFaqs, deleteFaqById, insertFaq, getFaqsById, modificarFaqById, buscarFaqs }
+async function getTotalFaqs(){
+    var query = "SELECT COUNT(*) FROM faqs";
+    var rows = await pool.query(query);
+    return rows[0];
+}
+
+module.exports = { getFaqs, deleteFaqById, insertFaq, getFaqsById, modificarFaqById, buscarFaqs, getTotalFaqs }

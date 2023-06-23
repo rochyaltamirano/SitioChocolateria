@@ -48,4 +48,10 @@ async function buscarNovedades(busqueda) {
     return rows;
 }
 
-module.exports = { getNovedades, deleteNovedadesById, insertNovedad, getNovedadesById, modificarNovedadById, buscarNovedades }
+async function getTotalNovedades(){
+    var query = "SELECT COUNT(*) FROM novedades";
+    var rows = await pool.query(query);
+    return rows[0];
+}
+
+module.exports = { getNovedades, deleteNovedadesById, insertNovedad, getNovedadesById, modificarNovedadById, buscarNovedades, getTotalNovedades}

@@ -25,6 +25,42 @@
     </ul>
 </div>
 
-<div class="container-fluid" style="margin-top:100px">
-    <h1 class="text-center">Dashboard in progress</h1>
+
+<!--inicio de Cards-->
+<div class="container text-center">
+    <div id="dashboard" class="row align-items-stretch my-3 staff py-4 scroll_section text-center"
+        style="margin:10px auto">
+        <div class="col-lg-8 offset-lg-2">
+            <h1 class="text-center">Dashboard</h1>
+            <div class="row row-cols-1 row-cols-md-3 g-3">
+
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Novedades</h5>
+                            <p class="valores">{{cantNovedades}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Promociones</h5>
+                            <p class="valores">{{cantPromos}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">FAQs</h5>
+                            <p class="valores">{{cantFaqs}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!--cierre de Cards-->
 </div>

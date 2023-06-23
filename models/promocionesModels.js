@@ -47,4 +47,11 @@ async function buscarPromociones(busqueda) {
     var rows = await pool.query(query, ['%' + busqueda + '%', '%' + busqueda + '%', '%' + busqueda + '%']);
     return rows;
 }
-module.exports = { getPromociones, deletePromocionById, insertPromocion, getPromocionesById, modificarPromocionById, buscarPromociones }
+
+async function getTotalPromociones(){
+    var query = "SELECT COUNT(*) FROM promociones";
+    var rows = await pool.query(query);
+    return rows[0];
+}
+
+module.exports = { getPromociones, deletePromocionById, insertPromocion, getPromocionesById, modificarPromocionById, buscarPromociones, getTotalPromociones }
